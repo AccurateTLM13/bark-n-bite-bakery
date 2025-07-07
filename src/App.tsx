@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { ShoppingCart, Heart, Star, ArrowRight, ArrowDown, Mail, Phone, MapPin, Instagram, Facebook, Twitter, Leaf, Award, Truck, Clock, ChefHat, Package } from 'lucide-react';
+import { ShoppingCart, Heart, Star, ArrowRight, ArrowDown, Mail, Phone, MapPin, Instagram, Facebook, Twitter, Leaf, Clock, ChefHat, Package } from 'lucide-react';
 
 interface Product {
   id: number;
@@ -50,7 +50,7 @@ function App() {
     id: 1,
     name: "Peanut Butter & Bacon Cheese Biscuits",
     price: 2.00,
-    image: "/public/biscuits.png",                  // swap to final PNG path
+    image: "/biscuits.png",                  
     description: "Crunchy bone-shaped biscuits flavored with natural peanut butter plus bacon & cheddar.",
     ingredients: ["Whole-wheat flour", "Peanut butter", "Bacon bits", "Cheddar", "Egg"],
     type: 'standard'
@@ -59,7 +59,7 @@ function App() {
     id: 2,
     name: "Apple & Cheddar Pupcakes",
     price: 2.00,
-    image: "/public/apple-cheddar-pupcakes.png",
+    image: "/apple-cheddar-pupcakes.png",
     description: "Mini pup-friendly cupcakes packed with fresh apple and sharp cheddar.",
     ingredients: ["Oat flour", "Apple", "Cheddar cheese", "Honey", "Egg"],
     type: 'standard'
@@ -68,7 +68,7 @@ function App() {
     id: 3,
     name: "Peanut Butter Pupcakes",
     price: 2.00,
-    image: "/public/peanut-pupcakes.png",
+    image: "/peanut-pupcakes.png",
     description: "Soft peanut-butter cupcakes topped with a light yogurt drizzle.",
     ingredients: ["Oat flour", "Peanut butter", "Banana", "Yogurt", "Egg"],
     type: 'standard'
@@ -77,7 +77,7 @@ function App() {
     id: 4,
     name: "Chicken Jerky",
     price: 2.00,
-    image: "/public/chicken-jerky.png",
+    image: "/chicken-jerky.png",
     description: "Single-ingredient dehydrated chicken strips—nothing else.",
     ingredients: ["Chicken breast"],
     type: 'standard'
@@ -86,7 +86,7 @@ function App() {
     id: 5,
     name: "Peanut Butter Bacon Doughnuts",
     price: 2.00,
-    image: "/public/pb-bacon-doughnut.png",
+    image: "/pb-bacon-doughnut.png",
     description: "Dog-safe doughnut rings with peanut-butter glaze and bacon sprinkles.",
     ingredients: ["Brown-rice flour", "Peanut butter", "Bacon bits", "Honey", "Egg"],
     type: 'standard'
@@ -95,7 +95,7 @@ function App() {
     id: 6,
     name: "Cinnamon Bun with Cream-Cheese Icing",
     price: 2.00,
-    image: "/public/cinnamon-bun.png",
+    image: "/cinnamon-bun.png",
     description: "Soft cinnamon swirl bun finished with light cream-cheese frosting.",
     ingredients: ["Oat flour", "Pumpkin purée", "Cinnamon", "Cream cheese", "Egg"],
     type: 'standard'
@@ -104,7 +104,7 @@ function App() {
     id: 7,
     name: "Apple Puppy Pretzel",
     price: 2.00,
-    image: "/public/apple-pretzel.png",
+    image: "/apple-pretzel.png",
     description: "Chewy pretzel twist flavored with apple and a hint of honey.",
     ingredients: ["Whole-wheat flour", "Apple", "Honey", "Egg"],
     type: 'standard'
@@ -113,7 +113,7 @@ function App() {
     id: 8,
     name: "Pup Box (6-Pack)",
     price: 6.00,
-    image: "/public/pupbox.png",
+    image: "/pupbox.png",
     description: "Customizable box of any six treats—mix & match your pup’s favorites.",
     ingredients: [],          // varies per customer selection
     type: 'pupbox'
@@ -369,7 +369,7 @@ function App() {
               {/* Logo */}
               <div className="flex items-center space-x-2">
                 <img
-                src="/public/barknbiteace.png" 
+                src="/barknbiteace.png" 
                 alt="Bark & Bite logo"
                 className="h-[100px] w-auto object-contain"
                 />
@@ -433,7 +433,7 @@ function App() {
   <div className="absolute top-10 left-5 md:top-20 md:left-20 lg:top-32 lg:left-32 animate-float">
     <div className="w-16 h-16 bg-terracotta-200 rounded-full flex items-center justify-center shadow-soft">
       <img
-        src="/public/apple-pretzel.png"
+        src="/apple-pretzel.png"
         alt="Apple Puppy Pretzel"
         className="w-12 h-12 object-contain"
       />
@@ -444,7 +444,7 @@ function App() {
   <div className="absolute top-16 right-5 md:top-40 md:right-20 lg:top-48 lg:right-32 animate-float-delayed">
     <div className="w-20 h-20 bg-brown-200 rounded-full flex items-center justify-center shadow-soft">
       <img
-        src="/public/biscuits.png"
+        src="/biscuits.png"
         alt="Peanut-Butter Bone"
         className="w-16 h-16 object-contain"
       />
@@ -455,7 +455,7 @@ function App() {
   <div className="absolute bottom-16 left-5 md:bottom-40 md:left-20 lg:bottom-48 lg:left-32 animate-float-delayed-2">
     <div className="w-18 h-18 bg-cream-400 rounded-full flex items-center justify-center shadow-soft">
       <img
-        src="/public/chicken-jerky.png"
+        src="/chicken-jerky.png"
         alt="Chicken Jerky"
         className="w-14 h-14 object-contain"
       />
@@ -466,7 +466,7 @@ function App() {
   <div className="absolute bottom-10 right-5 md:bottom-20 md:right-10 lg:bottom-32 lg:right-32 animate-float">
     <div className="w-14 h-14 bg-terracotta-300 rounded-full flex items-center justify-center shadow-soft">
       <img
-        src="/public/apple-cheddar-pupcakes.png"
+        src="/apple-cheddar-pupcakes.png"
         alt="Apple & Cheddar Pup-cake"
         className="w-10 h-10 object-contain"
       />
@@ -666,7 +666,7 @@ function App() {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="text-center lg:text-left">
               <img 
-                src="/public/our-story.png" 
+                src="/our-story.png" 
                 alt="Baker with dog" 
                 className="w-80 h-80 object-cover rounded-full mx-auto lg:mx-0 shadow-card"
               />
@@ -889,7 +889,7 @@ function App() {
                 <div className="text-center py-8">
                   <div className="text-6xl mb-4">
                     <img
-                    src="/public/barknbiteace.png" 
+                    src="/barknbiteace.png" 
                     alt="Bark & Bite logo"
                     className="h-[100px] w-auto object-contain"
                     />
@@ -912,7 +912,7 @@ function App() {
                           <div className="mt-2">
                             <p className="text-xs text-brown-500 mb-1">Contains:</p>
                             <div className="text-xs text-brown-600 space-y-1">
-                              {item.selectedItems.map((treat, index) => (
+                              {item.selectedItems.map((treat) => (
                                 <div key={treat.id} className="flex items-center space-x-1">
                                   <span className="w-1 h-1 bg-brown-400 rounded-full"></span>
                                   <span>{treat.name}</span>
