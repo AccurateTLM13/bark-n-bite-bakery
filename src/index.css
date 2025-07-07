@@ -169,35 +169,22 @@ html {
   .animate-scroll {
     animation-duration: 15s;
   }
-  
-  .text-6xl {
-    font-size: 3rem;
-  }
-  
-  .text-7xl {
-    font-size: 4rem;
-  }
-  
-  .text-8xl {
-    font-size: 4.5rem;
-  }
 }
 
 @media (max-width: 480px) {
-  .text-6xl {
-    font-size: 2.5rem;
+  .animate-scroll {
+    animation-duration: 12s;
+  }
+}
+
+/* Ensure touch targets are at least 44px */
+@media (max-width: 768px) {
+  button {
+    min-height: 44px;
   }
   
-  .text-7xl {
-    font-size: 3rem;
-  }
-  
-  .text-8xl {
-    font-size: 3.5rem;
-  }
-  
-  .px-12 {
-    padding-left: 2rem;
-    padding-right: 2rem;
+  .touch-target {
+    min-height: 44px;
+    min-width: 44px;
   }
 }

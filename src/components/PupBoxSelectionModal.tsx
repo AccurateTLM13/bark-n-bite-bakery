@@ -38,30 +38,30 @@ const PupBoxSelectionModal = ({ isOpen, onClose, products, onConfirm }: PupBoxSe
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
-      <div className="bg-white rounded-3xl max-w-4xl w-full max-h-[90vh] overflow-hidden shadow-floating">
-        <div className="p-6 border-b border-brown-200">
+    <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-2 sm:p-4">
+      <div className="bg-white rounded-2xl sm:rounded-3xl max-w-4xl w-full max-h-[95vh] sm:max-h-[90vh] overflow-hidden shadow-floating">
+        <div className="p-4 sm:p-6 border-b border-brown-200">
           <div className="flex justify-between items-center">
             <div>
-              <h3 className="text-3xl font-bold text-brown-900 font-serif">Choose Your 6 Treats</h3>
-              <p className="text-brown-600 mt-2">Select exactly 6 treats for your Pup Box</p>
+              <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-brown-900 font-serif">Choose Your 6 Treats</h3>
+              <p className="text-brown-600 mt-1 sm:mt-2 text-sm sm:text-base">Select exactly 6 treats for your Pup Box</p>
             </div>
             <button
               onClick={handleClose}
-              className="text-brown-500 hover:text-brown-700 text-3xl"
+              className="text-brown-500 hover:text-brown-700 text-2xl sm:text-3xl p-1"
             >
               ×
             </button>
           </div>
-          <div className="mt-4 bg-cream-100 rounded-full px-4 py-2 inline-block">
-            <span className="text-brown-700 font-semibold">
+          <div className="mt-3 sm:mt-4 bg-cream-100 rounded-full px-3 sm:px-4 py-1 sm:py-2 inline-block">
+            <span className="text-brown-700 font-semibold text-sm sm:text-base">
               {selectedTreats.length}/6 treats selected
             </span>
           </div>
         </div>
 
-        <div className="p-6 overflow-y-auto max-h-[60vh]">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="p-4 sm:p-6 overflow-y-auto max-h-[60vh] sm:max-h-[55vh]">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             {products.map((product) => {
               const isSelected = selectedTreats.some(treat => treat.id === product.id);
               const canSelect = selectedTreats.length < 6 || isSelected;
@@ -79,19 +79,19 @@ const PupBoxSelectionModal = ({ isOpen, onClose, products, onConfirm }: PupBoxSe
                   onClick={() => canSelect && toggleTreatSelection(product)}
                 >
                   {isSelected && (
-                    <div className="absolute top-2 right-2 bg-terracotta-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold z-10">
+                    <div className="absolute top-2 right-2 bg-terracotta-600 text-white rounded-full w-6 h-6 sm:w-8 sm:h-8 flex items-center justify-center font-bold z-10 text-sm sm:text-base">
                       ✓
                     </div>
                   )}
 
-                  <div className="p-4">
+                  <div className="p-3 sm:p-4">
                     <img
                       src={product.image}
                       alt={product.name}
                       loading="lazy"
-                      className="w-24 h-24 object-cover rounded-full mx-auto mb-4"
+                      className="w-20 h-20 sm:w-24 sm:h-24 object-cover rounded-full mx-auto mb-3 sm:mb-4"
                     />
-                    <h4 className="text-lg font-bold text-brown-900 mb-2 font-serif text-center">
+                    <h4 className="text-base sm:text-lg font-bold text-brown-900 mb-2 font-serif text-center">
                       {product.name}
                     </h4>
                     <p className="text-brown-600 text-sm text-center leading-relaxed">
@@ -104,18 +104,18 @@ const PupBoxSelectionModal = ({ isOpen, onClose, products, onConfirm }: PupBoxSe
           </div>
         </div>
 
-        <div className="p-6 border-t border-brown-200">
+        <div className="p-4 sm:p-6 border-t border-brown-200">
           <div className="flex justify-between items-center">
             <button
               onClick={handleClose}
-              className="px-6 py-3 text-brown-700 hover:text-brown-900 font-semibold transition-colors"
+              className="px-4 sm:px-6 py-2 sm:py-3 text-brown-700 hover:text-brown-900 font-semibold transition-colors text-sm sm:text-base"
             >
               Cancel
             </button>
             <button
               onClick={handleConfirm}
               disabled={selectedTreats.length !== 6}
-              className={`px-8 py-3 rounded-full font-semibold transition-all${
+              className={`px-6 sm:px-8 py-2 sm:py-3 rounded-full font-semibold transition-all text-sm sm:text-base${
                 selectedTreats.length === 6
                   ? ' bg-terracotta-600 hover:bg-terracotta-700 text-white transform hover:scale-105'
                   : ' bg-gray-300 text-gray-500 cursor-not-allowed'

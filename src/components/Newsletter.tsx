@@ -10,19 +10,19 @@ interface NewsletterProps {
 const Newsletter = ({ email, setEmail, emailStatus, handleEmailSubmit }: NewsletterProps) => (
   <section className="py-20 bg-terracotta-600">
     <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center">
-      <h2 className="text-4xl md:text-5xl font-bold text-white mb-4 font-serif">Join the Pack</h2>
-      <p className="text-xl text-terracotta-100 mb-8">Get treat news, special offers, and tips for keeping your pup happy</p>
+      <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 font-serif">Join the Pack</h2>
+      <p className="text-lg sm:text-xl text-terracotta-100 mb-6 sm:mb-8 px-4">Get treat news, special offers, and tips for keeping your pup happy</p>
       <form onSubmit={handleEmailSubmit} className="mx-auto">
-        <div className="flex space-x-4">
+        <div className="flex flex-col space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4">
           <input
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             placeholder="Enter your email"
-            className="flex-1 px-6 py-4 rounded-full border-0 focus:outline-none focus:ring-4 focus:ring-white/20 text-brown-900"
+            className="flex-1 px-4 sm:px-6 py-3 sm:py-4 rounded-full border-0 focus:outline-none focus:ring-4 focus:ring-white/20 text-brown-900 text-sm sm:text-base"
             required
           />
-          <button type="submit" className="bg-white hover:bg-cream-100 text-terracotta-600 px-8 py-4 rounded-full font-semibold transition-all transform hover:scale-105">
+          <button type="submit" className="bg-white hover:bg-cream-100 text-terracotta-600 px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold transition-all transform hover:scale-105 text-sm sm:text-base whitespace-nowrap">
             Sign Up for Treat News & Offers
           </button>
         </div>

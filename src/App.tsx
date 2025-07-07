@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import PupBoxSelectionModal from './components/PupBoxSelectionModal';
+import MobileMenu from './components/MobileMenu';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import ProductGrid from './components/ProductGrid';
@@ -24,6 +25,7 @@ function App() {
   const [emailStatus, setEmailStatus] = useState<'idle' | 'success' | 'error'>('idle');
   const [isPupBoxSelectionOpen, setIsPupBoxSelectionOpen] = useState(false);
   const [currentPupBoxProduct, setCurrentPupBoxProduct] = useState<Product | null>(null);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   // Contact and pickup details can be customized via environment variables
   const contactPhone = import.meta.env.VITE_CONTACT_PHONE ?? '(731) 555-BARK';
@@ -123,6 +125,12 @@ function App() {
         openCart={() => setIsCartOpen(true)}
         getTotalItems={getTotalItems}
         scrollToSection={scrollToSection}
+        openMobileMenu={() => setIsMobileMenuOpen(true)}
+      />
+      <MobileMenu
+        isOpen={isMobileMenuOpen}
+        onClose={() => setIsMobileMenuOpen(false)}
+        scrollToSection={scrollToSection}
       />
       <Hero scrollToSection={scrollToSection} />
       <ProductGrid
@@ -151,29 +159,29 @@ function App() {
 
       {/* Shopping Cart Modal */}
       {isCartOpen && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
-          <div className="bg-white rounded-3xl max-w-md w-full max-h-[80vh] overflow-hidden shadow-floating">
-            <div className="p-6 border-b border-brown-200">
+        <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-2 sm:p-4">
+          <div className="bg-white rounded-2xl sm:rounded-3xl max-w-md w-full max-h-[90vh] sm:max-h-[80vh] overflow-hidden shadow-floating">
+            <div className="p-4 sm:p-6 border-b border-brown-200">
               <div className="flex justify-between items-center">
-                <h3 className="text-2xl font-bold text-brown-900 font-serif">Your Cart</h3>
+                <h3 className="text-xl sm:text-2xl font-bold text-brown-900 font-serif">Your Cart</h3>
                 <button
                   onClick={() => setIsCartOpen(false)}
-                  className="text-brown-500 hover:text-brown-700 text-2xl"
+                  className="text-brown-500 hover:text-brown-700 text-xl sm:text-2xl p-1"
                 >
                   ×
                 </button>
               </div>
             </div>
 
-            <div className="p-6 overflow-y-auto max-h-96">
+            <div className="p-4 sm:p-6 overflow-y-auto max-h-[50vh] sm:max-h-96">
               {cart.length === 0 ? (
-                <div className="text-center py-8">
-                  <div className="text-6xl mb-4">
+                <div className="text-center py-6 sm:py-8">
+                  <div className="mb-4">
                     <img
                     src="/barknbiteace.png"
                     alt="Bark & Bite logo"
                     loading="lazy"
-                    className="h-[100px] w-auto object-contain"
+                    className="h-16 sm:h-20 w-auto object-contain mx-auto"
                     />
                   </div>
                   <p className="text-brown-500">Your cart is empty</p>
@@ -182,15 +190,15 @@ function App() {
               ) : (
                 <div className="space-y-4">
                   {cart.map((item) => (
-                    <div key={item.id} className="flex items-center space-x-4 bg-cream-50 p-4 rounded-2xl">
+                    <div key={item.id} className="flex items-center space-x-3 sm:space-x-4 bg-cream-50 p-3 sm:p-4 rounded-xl sm:rounded-2xl">
                       <img
                         src={item.image}
                         alt={item.name}
                         loading="lazy"
-                        className="w-16 h-16 object-cover rounded-full"
+                        className="w-12 h-12 sm:w-16 sm:h-16 object-cover rounded-full flex-shrink-0"
                       />
                       <div className="flex-1">
-                        <h4 className="font-semibold text-brown-900">{item.name}</h4>
+                        <h4 className="font-semibold text-brown-900 text-sm sm:text-base">{item.name}</h4>
                         {item.selectedItems && (
                           <div className="mt-2">
                             <p className="text-xs text-brown-500 mb-1">Contains:</p>
@@ -204,10 +212,10 @@ function App() {
                             </div>
                           </div>
                         )}
-                        <p className="text-brown-700">${item.price}</p>
+                        <p className="text-brown-700 text-sm sm:text-base">${item.price}</p>
                       </div>
                       <div className="text-center">
-                        <span className="font-semibold text-brown-900">Qty: {item.quantity}</span>
+                        <span className="font-semibold text-brown-900 text-sm">Qty: {item.quantity}</span>
                       </div>
                     </div>
                   ))}
@@ -216,12 +224,12 @@ function App() {
             </div>
 
             {cart.length > 0 && (
-              <div className="p-6 border-t border-brown-200">
+              <div className="p-4 sm:p-6 border-t border-brown-200">
                 <div className="flex justify-between items-center mb-4">
-                  <span className="text-xl font-bold text-brown-900">Total:</span>
-                  <span className="text-xl font-bold text-brown-900">${getTotalPrice().toFixed(2)}</span>
+                  <span className="text-lg sm:text-xl font-bold text-brown-900">Total:</span>
+                  <span className="text-lg sm:text-xl font-bold text-brown-900">${getTotalPrice().toFixed(2)}</span>
                 </div>
-                <button className="w-full bg-terracotta-600 hover:bg-terracotta-700 text-white py-3 rounded-full font-semibold transition-all">
+                <button className="w-full bg-terracotta-600 hover:bg-terracotta-700 text-white py-3 sm:py-4 rounded-full font-semibold transition-all text-sm sm:text-base">
                   Proceed to Checkout
                 </button>
               </div>
