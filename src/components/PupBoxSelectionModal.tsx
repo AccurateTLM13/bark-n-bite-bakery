@@ -1,15 +1,5 @@
 import React, { useState } from 'react';
-
-interface Product {
-  id: number;
-  name: string;
-  price: number;
-  image: string;
-  description: string;
-  ingredients: string[];
-  isFavorite?: boolean;
-  type?: 'standard' | 'pupbox';
-}
+import { Product } from '../data/products';
 
 type PupBoxSelectionModalProps = {
   isOpen: boolean;
