@@ -50,7 +50,7 @@ function App() {
     id: 1,
     name: "Peanut Butter & Bacon Cheese Biscuits",
     price: 2.00,
-    image: "/public/biscuits.png",                  // swap to final PNG path
+    image: "/biscuits.png",                  // swap to final PNG path
     description: "Crunchy bone-shaped biscuits flavored with natural peanut butter plus bacon & cheddar.",
     ingredients: ["Whole-wheat flour", "Peanut butter", "Bacon bits", "Cheddar", "Egg"],
     type: 'standard'
