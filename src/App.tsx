@@ -323,6 +323,7 @@ function App() {
                       <img
                         src={product.image}
                         alt={product.name}
+                        loading="lazy"
                         className="w-24 h-24 object-cover rounded-full mx-auto mb-4"
                       />
                       <h4 className="text-lg font-bold text-brown-900 mb-2 font-serif text-center">
@@ -376,8 +377,9 @@ function App() {
               {/* Logo */}
               <div className="flex items-center space-x-2">
                 <img
-                src="/public/barknbiteace.png" 
+                src="/public/barknbiteace.png"
                 alt="Bark & Bite logo"
+                loading="lazy"
                 className="h-[100px] w-auto object-contain"
                 />
                 <span className="text-brown-900 font-bold text-2xl font-serif">
@@ -442,6 +444,7 @@ function App() {
       <img
         src="/public/apple-pretzel.png"
         alt="Apple Puppy Pretzel"
+        loading="lazy"
         className="w-12 h-12 object-contain"
       />
     </div>
@@ -453,6 +456,7 @@ function App() {
       <img
         src="/public/biscuits.png"
         alt="Peanut-Butter Bone"
+        loading="lazy"
         className="w-16 h-16 object-contain"
       />
     </div>
@@ -464,6 +468,7 @@ function App() {
       <img
         src="/public/chicken-jerky.png"
         alt="Chicken Jerky"
+        loading="lazy"
         className="w-14 h-14 object-contain"
       />
     </div>
@@ -475,6 +480,7 @@ function App() {
       <img
         src="/public/apple-cheddar-pupcakes.png"
         alt="Apple & Cheddar Pup-cake"
+        loading="lazy"
         className="w-10 h-10 object-contain"
       />
     </div>
@@ -571,6 +577,7 @@ function App() {
               <img
                 src={product.image}
                 alt={product.name}
+                loading="lazy"
                 className="w-32 h-32 object-cover rounded-full mx-auto mb-6 group-hover:scale-105 transition-transform"
               />
 
@@ -672,9 +679,10 @@ function App() {
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="text-center lg:text-left">
-              <img 
-                src="/public/our-story.png" 
-                alt="Baker with dog" 
+              <img
+                src="/public/our-story.png"
+                alt="Baker with dog"
+                loading="lazy"
                 className="w-80 h-80 object-cover rounded-full mx-auto lg:mx-0 shadow-card"
               />
             </div>
@@ -896,8 +904,9 @@ function App() {
                 <div className="text-center py-8">
                   <div className="text-6xl mb-4">
                     <img
-                    src="/public/barknbiteace.png" 
+                    src="/public/barknbiteace.png"
                     alt="Bark & Bite logo"
+                    loading="lazy"
                     className="h-[100px] w-auto object-contain"
                     />
                   </div>
@@ -908,9 +917,10 @@ function App() {
                 <div className="space-y-4">
                   {cart.map((item) => (
                     <div key={item.id} className="flex items-center space-x-4 bg-cream-50 p-4 rounded-2xl">
-                      <img 
-                        src={item.image} 
+                      <img
+                        src={item.image}
                         alt={item.name}
+                        loading="lazy"
                         className="w-16 h-16 object-cover rounded-full"
                       />
                       <div className="flex-1">
