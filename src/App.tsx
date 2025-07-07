@@ -1,28 +1,27 @@
 import React, { useState, useEffect } from 'react';
-import { ShoppingCart, Heart, Star, ArrowRight, ArrowDown, Mail, Phone, MapPin, Instagram, Facebook, Twitter, Leaf, Award, Truck, Clock, ChefHat, Package } from 'lucide-react';
-
-interface Product {
-  id: number;
-  name: string;
-  price: number;
-  image: string;
-  description: string;
-  ingredients: string[];
-  isFavorite?: boolean;
-  type?: 'standard' | 'pupbox';
-}
+import {
+  ShoppingCart,
+  Heart,
+  Star,
+  ArrowRight,
+  ArrowDown,
+  Mail,
+  Phone,
+  MapPin,
+  Instagram,
+  Facebook,
+  Twitter,
+  Leaf,
+  Clock,
+  ChefHat,
+  Package,
+} from 'lucide-react';
+import { products as productsData, Product } from './data/products';
+import { testimonials as testimonialsData, Testimonial } from './data/testimonials';
 
 interface CartItem extends Product {
   quantity: number;
   selectedItems?: Product[];
-}
-
-interface Testimonial {
-  id: number;
-  name: string;
-  text: string;
-  rating: number;
-  dogName: string;
 }
 
 function App() {
@@ -45,112 +44,9 @@ function App() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const products: Product[] = [
-    {
-    id: 1,
-    name: "Peanut Butter & Bacon Cheese Biscuits",
-    price: 2.00,
-    image: "/public/biscuits.png",                  // swap to final PNG path
-    description: "Crunchy bone-shaped biscuits flavored with natural peanut butter plus bacon & cheddar.",
-    ingredients: ["Whole-wheat flour", "Peanut butter", "Bacon bits", "Cheddar", "Egg"],
-    type: 'standard'
-  },
-  {
-    id: 2,
-    name: "Apple & Cheddar Pupcakes",
-    price: 2.00,
-    image: "/public/apple-cheddar-pupcakes.png",
-    description: "Mini pup-friendly cupcakes packed with fresh apple and sharp cheddar.",
-    ingredients: ["Oat flour", "Apple", "Cheddar cheese", "Honey", "Egg"],
-    type: 'standard'
-  },
-  {
-    id: 3,
-    name: "Peanut Butter Pupcakes",
-    price: 2.00,
-    image: "/public/peanut-pupcakes.png",
-    description: "Soft peanut-butter cupcakes topped with a light yogurt drizzle.",
-    ingredients: ["Oat flour", "Peanut butter", "Banana", "Yogurt", "Egg"],
-    type: 'standard'
-  },
-  {
-    id: 4,
-    name: "Chicken Jerky",
-    price: 2.00,
-    image: "/public/chicken-jerky.png",
-    description: "Single-ingredient dehydrated chicken strips—nothing else.",
-    ingredients: ["Chicken breast"],
-    type: 'standard'
-  },
-  {
-    id: 5,
-    name: "Peanut Butter Bacon Doughnuts",
-    price: 2.00,
-    image: "/public/pb-bacon-doughnut.png",
-    description: "Dog-safe doughnut rings with peanut-butter glaze and bacon sprinkles.",
-    ingredients: ["Brown-rice flour", "Peanut butter", "Bacon bits", "Honey", "Egg"],
-    type: 'standard'
-  },
-  {
-    id: 6,
-    name: "Cinnamon Bun with Cream-Cheese Icing",
-    price: 2.00,
-    image: "/public/cinnamon-bun.png",
-    description: "Soft cinnamon swirl bun finished with light cream-cheese frosting.",
-    ingredients: ["Oat flour", "Pumpkin purée", "Cinnamon", "Cream cheese", "Egg"],
-    type: 'standard'
-  },
-  {
-    id: 7,
-    name: "Apple Puppy Pretzel",
-    price: 2.00,
-    image: "/public/apple-pretzel.png",
-    description: "Chewy pretzel twist flavored with apple and a hint of honey.",
-    ingredients: ["Whole-wheat flour", "Apple", "Honey", "Egg"],
-    type: 'standard'
-  },
-  {
-    id: 8,
-    name: "Pup Box (6-Pack)",
-    price: 6.00,
-    image: "/public/pupbox.png",
-    description: "Customizable box of any six treats—mix & match your pup’s favorites.",
-    ingredients: [],          // varies per customer selection
-    type: 'pupbox'
-  }
-];
+  const products: Product[] = productsData;
 
-
-  const testimonials: Testimonial[] = [
-    {
-      id: 1,
-      name: "Sarah M.",
-      text: "My golden retriever Max goes absolutely crazy for these treats! The quality is amazing.",
-      rating: 5,
-      dogName: "Max"
-    },
-    {
-      id: 2,
-      name: "David L.",
-      text: "Finally found treats that my picky eater loves. The bacon swirls are her favorite!",
-      rating: 5,
-      dogName: "Luna"
-    },
-    {
-      id: 3,
-      name: "Jennifer K.",
-      text: "Love knowing exactly what ingredients are in my dog's treats. Fresh and delicious!",
-      rating: 5,
-      dogName: "Charlie"
-    },
-    {
-      id: 4,
-      name: "Mike R.",
-      text: "Best dog treats in Gibson County! My lab mix can't get enough of them.",
-      rating: 5,
-      dogName: "Buddy"
-    }
-  ];
+  const testimonials: Testimonial[] = testimonialsData;
 
   const toggleFavorite = (productId: number) => {
     setFavorites(prev => 
@@ -912,7 +808,7 @@ function App() {
                           <div className="mt-2">
                             <p className="text-xs text-brown-500 mb-1">Contains:</p>
                             <div className="text-xs text-brown-600 space-y-1">
-                              {item.selectedItems.map((treat, index) => (
+                              {item.selectedItems.map((treat) => (
                                 <div key={treat.id} className="flex items-center space-x-1">
                                   <span className="w-1 h-1 bg-brown-400 rounded-full"></span>
                                   <span>{treat.name}</span>
