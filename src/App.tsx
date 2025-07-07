@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { ShoppingCart, Heart, Star, ArrowRight, ArrowDown, Mail, Phone, MapPin, Instagram, Facebook, Twitter, Leaf, Award, Truck, Clock, ChefHat, Package } from 'lucide-react';
+import { ShoppingCart, Heart, Star, ArrowRight, ArrowDown, Mail, Phone, MapPin, Instagram, Facebook, Twitter, Leaf, Clock, ChefHat, Package } from 'lucide-react';
 
 interface Product {
   id: number;
@@ -34,6 +34,13 @@ function App() {
   const [emailStatus, setEmailStatus] = useState<'idle' | 'success' | 'error'>('idle');
   const [isPupBoxSelectionOpen, setIsPupBoxSelectionOpen] = useState(false);
   const [currentPupBoxProduct, setCurrentPupBoxProduct] = useState<Product | null>(null);
+
+  // Contact and pickup details can be customized via environment variables
+  const contactPhone = import.meta.env.VITE_CONTACT_PHONE ?? '(731) 555-BARK';
+  const contactEmail = import.meta.env.VITE_CONTACT_EMAIL ?? 'hello@barkandbite.com';
+  const contactLocation = import.meta.env.VITE_CONTACT_LOCATION ?? 'Gibson County, TN';
+  const pickupHours = import.meta.env.VITE_PICKUP_HOURS ?? 'Saturday: 10AM - 2PM';
+  const orderClose = import.meta.env.VITE_ORDER_CLOSE ?? 'Orders close Friday 5PM';
 
   useEffect(() => {
     const handleScroll = () => {
@@ -835,15 +842,15 @@ function App() {
               <div className="space-y-3">
                 <div className="flex items-center space-x-3">
                   <Phone className="h-4 w-4 text-brown-400" />
-                  <span className="text-brown-300">(731) 555-BARK</span>
+                  <span className="text-brown-300">{contactPhone}</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <Mail className="h-4 w-4 text-brown-400" />
-                  <span className="text-brown-300">hello@barkandbite.com</span>
+                  <span className="text-brown-300">{contactEmail}</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <MapPin className="h-4 w-4 text-brown-400" />
-                  <span className="text-brown-300">Gibson County, TN</span>
+                  <span className="text-brown-300">{contactLocation}</span>
                 </div>
               </div>
             </div>
@@ -851,8 +858,8 @@ function App() {
             <div>
               <h5 className="text-lg font-semibold mb-4 font-serif">Pickup Hours</h5>
               <div className="space-y-2 text-brown-300">
-                <p>Saturday: 10AM - 2PM</p>
-                <p>Orders close Friday 5PM</p>
+                <p>{pickupHours}</p>
+                <p>{orderClose}</p>
                 <p className="text-sm mt-4">
                   Fresh treats baked weekly in small batches
                 </p>
@@ -912,7 +919,7 @@ function App() {
                           <div className="mt-2">
                             <p className="text-xs text-brown-500 mb-1">Contains:</p>
                             <div className="text-xs text-brown-600 space-y-1">
-                              {item.selectedItems.map((treat, index) => (
+                              {item.selectedItems.map((treat) => (
                                 <div key={treat.id} className="flex items-center space-x-1">
                                   <span className="w-1 h-1 bg-brown-400 rounded-full"></span>
                                   <span>{treat.name}</span>
