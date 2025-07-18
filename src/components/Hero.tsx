@@ -43,7 +43,7 @@ const Hero = ({ scrollToSection }: HeroProps) => (
           </div>
         </div>
         {/* Apple & Cheddar Pup-cake */}
-        <div className="absolute bottom-40 right-2 sm:bottom-52 sm:right-5 md:bottom-60 md:right-10 lg:bottom-72 lg:right-32 animate-float">
+        <div className="absolute bottom-28 right-2 sm:bottom-52 sm:right-5 md:bottom-60 md:right-10 lg:bottom-72 lg:right-32 animate-float">
           <div className="w-32 h-32 bg-terracotta-300 rounded-full flex items-center justify-center shadow-soft">
             <img
               src="/apple-cheddar-pupcakes.png"
