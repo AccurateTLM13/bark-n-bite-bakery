@@ -9,24 +9,48 @@ const Hero = ({ scrollToSection }: HeroProps) => (
   <>
     <section className="relative min-h-screen flex items-center bg-gradient-to-br from-cream-200 to-cream-300 overflow-hidden">
       <div className="absolute inset-0 pointer-events-none">
+        {/* Apple Pretzel */}
         <div className="absolute top-16 left-2 sm:top-20 sm:left-5 md:top-20 md:left-20 lg:top-32 lg:left-32 animate-float">
-          <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-terracotta-200 rounded-full flex items-center justify-center shadow-soft">
-            <img src="/apple-pretzel.png" alt="Apple Puppy Pretzel" loading="lazy" className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 object-contain" />
+          <div className="w-32 h-32 bg-terracotta-200 rounded-full flex items-center justify-center shadow-soft">
+            <img
+              src="/apple-pretzel.png"
+              alt="Apple Puppy Pretzel"
+              loading="lazy"
+              className="w-24 h-24 object-contain"
+            />
           </div>
         </div>
+        {/* Peanut-Butter Bone (Biscuits) */}
         <div className="absolute top-24 right-2 sm:top-32 sm:right-5 md:top-40 md:right-20 lg:top-48 lg:right-32 animate-float-delayed">
-          <div className="w-14 h-14 sm:w-16 sm:h-16 md:w-18 md:h-18 lg:w-20 lg:h-20 bg-brown-200 rounded-full flex items-center justify-center shadow-soft">
-            <img src="/biscuits.png" alt="Peanut-Butter Bone" loading="lazy" className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 object-contain" />
+          <div className="w-32 h-32 bg-brown-200 rounded-full flex items-center justify-center shadow-soft">
+            <img
+              src="/biscuits.png"
+              alt="Peanut-Butter Bone"
+              loading="lazy"
+              className="w-24 h-24 object-contain"
+            />
           </div>
         </div>
+        {/* Chicken Jerky */}
         <div className="absolute bottom-24 left-2 sm:bottom-32 sm:left-5 md:bottom-40 md:left-20 lg:bottom-48 lg:left-32 animate-float-delayed-2">
-          <div className="w-14 h-14 sm:w-16 sm:h-16 md:w-18 md:h-18 bg-cream-400 rounded-full flex items-center justify-center shadow-soft">
-            <img src="/chicken-jerky.png" alt="Chicken Jerky" loading="lazy" className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 object-contain" />
+          <div className="w-32 h-32 bg-cream-400 rounded-full flex items-center justify-center shadow-soft">
+            <img
+              src="/chicken-jerky.png"
+              alt="Chicken Jerky"
+              loading="lazy"
+              className="w-24 h-24 object-contain"
+            />
           </div>
         </div>
+        {/* Apple & Cheddar Pup-cake */}
         <div className="absolute bottom-16 right-2 sm:bottom-20 sm:right-5 md:bottom-20 md:right-10 lg:bottom-32 lg:right-32 animate-float">
-          <div className="w-12 h-12 sm:w-14 sm:h-14 bg-terracotta-300 rounded-full flex items-center justify-center shadow-soft">
-            <img src="/apple-cheddar-pupcakes.png" alt="Apple & Cheddar Pup-cake" loading="lazy" className="w-8 h-8 sm:w-10 sm:h-10 object-contain" />
+          <div className="w-32 h-32 bg-terracotta-300 rounded-full flex items-center justify-center shadow-soft">
+            <img
+              src="/apple-cheddar-pupcakes.png"
+              alt="Apple & Cheddar Pup-cake"
+              loading="lazy"
+              className="w-24 h-24 object-contain"
+            />
           </div>
         </div>
       </div>
